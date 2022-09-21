@@ -1,8 +1,9 @@
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
 <head>
   <title>결제하기</title>
-  <script src="https://js.tosspayments.com/v1"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <style>
   html,
@@ -19,25 +20,27 @@
     overflow: auto;
   }
 </style>
+<script src="https://js.tosspayments.com/v1"></script>
+<script>
+  var clientKey = 'test_ck_Kma60RZblrqwYqe2jGx3wzYWBn14'
+  var tossPayments = TossPayments(clientKey) // 클라이언트 키로 초기화하기
+</script>
 
-  <script>
-    var clientKey = 'test_ck_Kma60RZblrqwYqe2jGx3wzYWBn14'
-    var tossPayments = TossPayments(clientKey) // 클라이언트 키로 초기화하기
-  </script>
 <body>
   <div id="full-size"></div>
 </body>
 <script>
   var element_layer = document.getElementById("full-size");
   tossPayments.requestPayment('카드', { // 결제 수단 파라미터
-  // 결제 정보 파라미터
-  amount: 15000,
-  orderId: '1yfEvc8puP0W83ZWYPZOu',
-  orderName: '토스 티셔츠 외 2건',
-  customerName: '박토스',
-  successUrl: 'http://localhost:8080/success',
-  failUrl: 'http://localhost:8080/fail',
-});
+    // 결제 정보 파라미터
+    amount: 15000,
+    orderId: '1yfEvc8puP0W83ZWYPZOu',
+    orderName: '토스 티셔츠 외 2건',
+    customerName: '박토스',
+    successUrl: 'http://localhost:8080/success',
+    failUrl: 'http://localhost:8080/fail',
+  }).embeded(element_layer);
+  element_layer.style.display = "block";
 </script>
 
 </html>
