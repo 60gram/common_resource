@@ -12,13 +12,7 @@
     padding: 0;
     height: 100%;
     width: 100%;
-  }
-
-  #full-size {
-    height: 100%;
-    width: 100%;
-    overflow: auto;
-  }
+  }  
 </style>
 <script src="https://js.tosspayments.com/v1"></script>
 <script>
@@ -27,7 +21,7 @@
 </script>
 
 <body>
-  <div id="full-size"></div>
+  
 </body>
 <script>
   var element_layer = document.getElementById("full-size");
@@ -39,8 +33,7 @@
     customerName: '박토스',
     successUrl: 'http://localhost:8080/success',
     failUrl: 'http://localhost:8080/fail',
-  }).embeded(element_layer);
-  element_layer.style.display = "block";
+  });
 </script>
 
 </html>
