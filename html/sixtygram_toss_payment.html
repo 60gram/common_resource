@@ -7,14 +7,21 @@
 
 <body>
   <script>
+    const URLSearch = new URLSearchParams(location.search);
+    const amount = URLSearch.get("a"); // 결제 금액
+    const orderNo = URLSearch.get("onu"); // 주문번호
+    const orderName = URLSearch.get("ona"); // 주문명
+
     var clientKey = 'test_ck_Kma60RZblrqwYqe2jGx3wzYWBn14'
     var tossPayments = TossPayments(clientKey) // 클라이언트 키로 초기화하기
+    console.dir(amount);
+    console.dir(orderNo);
+    console.dir(orderName);
     tossPayments.requestPayment('카드', { // 결제 수단 파라미터
       // 결제 정보 파라미터
-      amount: 15000,
-      orderId: '1yfEvc8puP0W83ZWYPZOu',
-      orderName: '토스 티셔츠 외 2건',
-      customerName: '박토스',
+      amount: amount,
+      orderId: orderNo,
+      orderName: orderName,
       successUrl: 'http://localhost:8080/success',
       failUrl: 'http://localhost:8080/fail',
     });
