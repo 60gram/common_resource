@@ -8,15 +8,15 @@
 <body>
   <script>
     const URLSearch = new URLSearchParams(location.search);
-    const resultUrl = 'https://60gram.github.io/common_resource/html/gram_toss_payment_result.html';
+    const resultUrl = 'https://60gram.github.io/common_resource/html/gram_toss_payment_result';
     var clientKey = 'test_ck_Kma60RZblrqwYqe2jGx3wzYWBn14'
     var tossPayments = TossPayments(clientKey)
     tossPayments.requestPayment('카드', {
       amount: URLSearch.get("a"),
       orderId: URLSearch.get("onu"),
       orderName: URLSearch.get("ona"),
-      successUrl: resultUrl + '/success',
-      failUrl: resultUrl + '/fail',
+      successUrl: resultUrl,
+      failUrl: resultUrl,
     });
   </script>
 </body>
