@@ -13,8 +13,8 @@
     var tossPayments = TossPayments(clientKey)
     tossPayments.requestPayment('카드', {
       amount: URLSearch.get("a"),
-      orderId: URLSearch.get("onu"),
-      orderName: URLSearch.get("ona"),
+      orderId: URLSearch.get("oi"),
+      orderName: URLSearch.get("on"),
       successUrl: resultUrl,
       failUrl: resultUrl,
     });
