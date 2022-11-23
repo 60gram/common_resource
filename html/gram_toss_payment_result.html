@@ -3,15 +3,27 @@
 <head>
   <title>결제 결과 확인중</title>
   <style>
-    div {
+    body {
+      background-color: black;
+    }
+
+    .information-text {
       height: 100px;
-      width: 100px;
+      width: 200px;
+      position: relative;
+      top: -200px;
+      left: -200px;
+    }
+
+    .center {
+      height: 200px;
+      width: 200px;
 
       position: fixed;
       top: 50%;
       left: 50%;
-      margin-top: -50px;
-      margin-left: -50px;
+      margin-top: -100px;
+      margin-left: -100px;
     }
 
     .reverse-spinner {
@@ -41,9 +53,10 @@
 </head>
 
 <body>
-  <div>
-    결제 결과 확인중입니다.
-    <div class="reverse-spinner"></div>
+  <div class="reverse-spinner">
+    <div class="center">
+      결제 결과 확인중입니다.
+    </div>
   </div>
 </body>
 
